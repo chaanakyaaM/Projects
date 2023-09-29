@@ -20,7 +20,7 @@ int main()
   printf("Just enter the number where you want to insert\n");
   for ( aa = 0; aa <= 10; aa++)
   {
-    for ( bb = 0; bb <= 10; bb++)
+    for ( bb = 0; bb <= 3; bb++)
     {
       printf("player 1:");
       scanf("%c", &sel);
@@ -325,7 +325,7 @@ int main()
       }
     }
     //}
-    for( cc = 0; cc <= 10; cc++)
+    for( cc = 0; cc <= 3; cc++)
      {
       printf("player 2:");
       scanf("%c", &sel2);
