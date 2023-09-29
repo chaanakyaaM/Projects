@@ -9,6 +9,7 @@ class original_win:
         self.name=name
         self.name=Tk()
         self.name.geometry("1000x700+250+50")
+        self.name.resizable(False,False)
 
         def save():
 
