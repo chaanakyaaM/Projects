@@ -21,11 +21,15 @@ class original_win:
             date_list.append(date)
 
             try:
+
                 with open("names.txt", 'a') as txt_file:#storage of names of saved files with dates
                     txt_file.write(f"{date}\n")
+
             except:
+
                 with open("names.txt",'w') as txt_file:
                     txt_file.write(f"{date}\n")
+
             textt=main_text.get(1.0,"end-1c")
             file=open(f"{date}.txt",'w')
             file.write(title+ '\n')
@@ -35,8 +39,8 @@ class original_win:
             file.write(textt+ '\n')
 
             print("yes")
+            self.name.destroy()
             file.close()
-
 
         def open_func():
 
