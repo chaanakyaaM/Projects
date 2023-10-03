@@ -2,6 +2,7 @@
 
 
 * It is a simple GUI application made with the help of python.
+* use "pip install tkinter" and "pip install cryptocode"
 * MAIN.py is the main file to run.
 * You can sign up and login in it.
 * You can perform other basic operations like creating a file ,searching a file ,Deleting a file.
