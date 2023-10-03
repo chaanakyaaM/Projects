@@ -15,9 +15,11 @@
 
 * It is the updated version of log_ver_1.
 * # features
-* 
 * All functional windows are resized to the same resolution(sign up and login).
 * The usernames and passwords are encryped (so that the other user can not understand).
+* # Defects
+* Windows has fixed resolution (not responsive).
+
   
 
 
