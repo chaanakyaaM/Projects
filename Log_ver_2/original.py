@@ -80,4 +80,4 @@ class original_win:
 
 if __name__=="__main__":
     
-    a=original_win("main")
+    original_win("main")

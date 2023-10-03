@@ -81,4 +81,4 @@ class login:
 
 if __name__=="__main__":
     
-    login("window")
+    login("login")
