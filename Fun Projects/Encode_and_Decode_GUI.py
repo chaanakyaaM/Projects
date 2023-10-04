@@ -32,9 +32,9 @@ def decrypt():
     output_label.delete(0,END)
     output_label.pack()
     msg1=cryptocode.decrypt(message_entry.get(),key_entry.get())
+    output_label.state(['!readonly'])
     output_label.insert(0,msg1)
     output_label.state(['readonly'])
-    output_label.state(['!readonly'])
     output_label.pack()
 
 encrypt_button=ttk.Button(root,text="Encrypt",command=encrypt,padding=2)
