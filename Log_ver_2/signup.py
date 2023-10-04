@@ -77,4 +77,4 @@ class signup:
 
 if __name__=="__main__":
 
-    signup("signup")
+    signup()
