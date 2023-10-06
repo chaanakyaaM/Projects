@@ -7,7 +7,7 @@ while True:
     Player_score=0
     Computer_score=0
     
-    for i in range(2): 
+    for i in range(10): 
         
         Player=input("Enter:")
         computer=random.choice(select)
@@ -39,3 +39,4 @@ while True:
     
     if(option=='n'):
         print("Thank you for playing")
+        break

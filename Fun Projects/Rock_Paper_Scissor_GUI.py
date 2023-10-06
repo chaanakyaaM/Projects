@@ -1,117 +1,119 @@
+from msilib.schema import SelfReg
 import random
-from tkinter import ttk
-from tkinter import *
+from tkinter import ttk,Tk,Text,END
 
-root=Tk()
-root.title("rock paper scissor")
-root.geometry("410x340+100+100")
+class rock_paper_scissor:
+    
+    def __init__(self,name="rock paper scissor"):
 
-computer_choice=["rock","paper","scissor"]
-choice=random.choice(computer_choice)
-print(choice)
+        self.name=name
+        self.root=Tk()
+        self.root.geometry("410x340+100+100")
+        self.root.resizable(False,False)
 
+        self.computer_choice=["rock","paper","scissor"]
+        self.choice=random.choice(self.computer_choice)
 
-computer_score=0
-player_score=0
+        self.computer_score=0
+        self.player_score=0
 
+        def rock():
+            text.config(state='normal') 
+            self.choice=random.choice(self.computer_choice)
+            text.delete("1.0","end-1c")
+            text.insert(END,"Rock\n")
+            if(self.choice=="rock"):
+                message="Computer chose same, so draw"
+            elif self.choice=="paper":
+                message="Computer chose paper"
+                self.computer_score+=1
+            else:
+                message="computer chose scissor"
+                self.player_score+=1
+            text.insert(END,f"{message}") 
+            text.insert(END,f"\nplayer score:{self.player_score}")  
+            text.insert(END,f"\nComputer score:{self.computer_score}")  
+            text.config(state='disabled')   
 
-def rock():
-    global computer_score
-    global player_score
-    global choice
-    choice=random.choice(computer_choice)
-    text.delete("1.0","end-1c")
-    text.insert(END,"Rock\n")
-    if(choice=="rock"):
-        message="Computer chose same, so draw"
-    elif choice=="paper":
-        message="Computer chose paper"
-        computer_score+=1
-    else:
-        message="computer chose scissor"
-        player_score+=1
-    text.insert(END,f"{message}") 
-    text.insert(END,f"\nplayer score:{player_score}")  
-    text.insert(END,f"\nComputer score:{computer_score}")    
+        def paper():
+            text.config(state='normal') 
+            self.choice=random.choice(self.computer_choice)
+            text.delete("1.0","end-1c")
+            text.insert(END,"Paper\n")
+            if(self.choice=="paper"):
+                message="Computer chose same, so draw"
+            elif self.choice=="scissor":
+                message="Computer chose scissor"
+                self.computer_score+=1
+            else:
+                message="Computer chose rock"
+                self.player_score+=1
+            text.insert(END,f"{message}") 
+            text.insert(END,f"\nPlayer score:{self.player_score}") 
+            text.insert(END,f"\nComputer score:{self.computer_score}")  
+            text.config(state='disabled')  
 
-def paper():
-    global computer_score
-    global player_score
-    global choice
-    choice=random.choice(computer_choice)
-    text.delete("1.0","end-1c")
-    text.insert(END,"Paper\n")
-    if(choice=="paper"):
-        message="Computer chose same, so draw"
-    elif choice=="scissor":
-        message="Computer chose scissor"
-        computer_score+=1
-    else:
-        message="Computer chose rock"
-        player_score+=1
-    text.insert(END,f"{message}") 
-    text.insert(END,f"\nPlayer score:{player_score}") 
-    text.insert(END,f"\nComputer score:{computer_score}")    
+        def scissor():
+            text.config(state='normal') 
+            self.choice=random.choice(self.computer_choice)
+            text.delete("1.0","end-1c")
+            text.insert(END,"Scissor\n")
+            if(self.choice=="scissor"):
+                message="Computer chose same, so draw"
+            elif self.choice=="rock":
+                message="Computer chose rock"
+                self.computer_score+=1
+            else:
+                message="Computer chose paper"
+                self.player_score+=1
+            text.insert(END,f"{message}") 
+            text.insert(END,f"\nPlayer score:{self.player_score}") 
+            text.insert(END,f"\nComputer score:{self.computer_score}")  
+            text.config(state='disabled') 
 
-def scissor():
-    global computer_score
-    global player_score
-    global choice
-    choice=random.choice(computer_choice)
-    text.delete("1.0","end-1c")
-    text.insert(END,"Scissor\n")
-    if(choice=="scissor"):
-        message="Computer chose same, so draw"
-    elif choice=="rock":
-        message="Computer chose rock"
-        computer_score+=1
-    else:
-        message="Computer chose paper"
-        player_score+=1
-    text.insert(END,f"{message}") 
-    text.insert(END,f"\nPlayer score:{player_score}") 
-    text.insert(END,f"\nComputer score:{computer_score}")  
+        def new():
+            text.config(state='normal') 
+            self.computer_score=0
+            self.player_score=0
+            text.delete("1.0","end-1c")    
+            text.insert(END,f"Player score:{self.player_score}\n")
+            text.insert(END,f"Computer score:{self.computer_score}\n")
+            text.config(state='disabled') 
 
-def new():
-    global computer_score
-    global player_score
-    computer_score=0
-    player_score=0
-    text.delete("1.0","end-1c")    
-    text.insert(END,f"Player score:{player_score}\n")
-    text.insert(END,f"Computer score:{computer_score}\n")
+        def end():
+            text.config(state='normal') 
+            text.delete("1.0","end-1c")    
+            text.insert(END,f"player score:{self.player_score}\n")
+            text.insert(END,f"computer score:{self.computer_score}\n")
+            if self.player_score>self.computer_score:
+                message=f"Congrats! Player wins with {self.player_score-self.computer_score} points"   
+            elif self.player_score<self.computer_score:
+                message=f"Computer wins with {self.computer_score-self.player_score} points\n better luck next time"
+            elif self.player_score==self.computer_score:
+                message=f"Draw, player and computer has equal {self.player_score} points " 
+            text.insert(END,f"{message}")
+            text.config(state='disabled') 
 
-def end():
-    global computer_score
-    global player_score
-    text.delete("1.0","end-1c")    
-    text.insert(END,f"player score:{player_score}\n")
-    text.insert(END,f"computer score:{computer_score}\n")
-    if player_score>computer_score:
-        message=f"Congrats! Player wins with {player_score-computer_score} points"   
-    elif player_score<computer_score:
-        message=f"Computer wins with {computer_score-player_score} points\n better luck next time"
-    elif player_score==computer_score:
-        message=f"Draw, player and computer has equal {player_score} points " 
-    text.insert(END,f"{message}")
+        rock_button=ttk.Button(self.root,text="rock",padding=10,width=18,command=rock)
+        rock_button.grid(row=1,column=1)
 
-rock_button=ttk.Button(root,text="rock",padding=10,width=18,command=rock)
-rock_button.grid(row=1,column=1)
+        paper_button=ttk.Button(self.root,text="paper",padding=10,width=18,command=paper)
+        paper_button.grid(row=1,column=2)
 
-paper_button=ttk.Button(root,text="paper",padding=10,width=18,command=paper)
-paper_button.grid(row=1,column=2)
+        scissor_button=ttk.Button(self.root,text="scissor",padding=10,width=18,command=scissor)
+        scissor_button.grid(row=1,column=3)
 
-scissor_button=ttk.Button(root,text="scissor",padding=10,width=18,command=scissor)
-scissor_button.grid(row=1,column=3)
+        text=Text(self.root,width=30,height=10,font=("Verdana",15))
+        text.grid(row=2,column=1,columnspan=3)
 
-text=Text(root,width=30,height=10,font=("Verdana",15))
-text.grid(row=2,column=1,columnspan=3)
+        new_game_button=ttk.Button(self.root,text="new game",padding=10,width=18,command=new)
+        new_game_button.grid(row=3,column=1)
 
-new_game_button=ttk.Button(root,text="new game",padding=10,width=18,command=new)
-new_game_button.grid(row=3,column=1)
+        end_button=ttk.Button(self.root,text="end",padding=10,width=18,command=end)
+        end_button.grid(row=3,column=3)
 
-end_button=ttk.Button(root,text="end",padding=10,width=18,command=end)
-end_button.grid(row=3,column=3)
+        self.root.mainloop()
 
+if __name__=="__main__":
 
-root.mainloop()
+    rock_paper_scissor()

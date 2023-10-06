@@ -1,6 +1,6 @@
+import time
 import keyboard
 import pyautogui
-import time
 
 
 keyboard.press_and_release('windows+ r')
@@ -20,6 +20,8 @@ keyboard.press_and_release('enter')
 time.sleep(1)
 
 pyautogui.click(100,300,duration=1)
+
+#Navigates to the first website on the index
 keyboard.press_and_release('tab')
 keyboard.press_and_release('tab')
 keyboard.press_and_release('tab')
@@ -28,4 +30,5 @@ keyboard.press_and_release('tab')
 keyboard.press_and_release('tab')
 keyboard.press_and_release('tab')
 keyboard.press_and_release('tab')
+
 keyboard.press_and_release('enter')
