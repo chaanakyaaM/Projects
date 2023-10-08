@@ -4,7 +4,7 @@
 * It is a simple GUI application made with the help of python.
 * use "pip install tkinter" and "pip install cryptocode"
 * MAIN.py is the main file to run.
-* You can sign up and login in it.
+* You can sign up and login in.
 * You can perform other basic operations like creating a file ,searching a file ,Deleting a file.
 * The username and passwords are stored in the file named usernames_passwords.txt .
 * After creating the file ,the file is saved with the name of the text you entered in the "Date:" coloum.
