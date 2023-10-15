@@ -3,18 +3,23 @@
 import os
 from tkinter import ttk,Text,Tk,END
 
-text_result=""
-
 def new():
 
-    global text_result
+    text_result.config(state='normal')
     text_result.delete('1.0',END)
+    
     text=text_area.get('1.0','end-1c')
     text_area.delete('1.0',END)
     
     output=os.popen(text).read()
-    text_result.insert(END,'\n'+output)
-    text_result.config(state='disabled')
+    
+    if output=="":
+        text_result.insert(END, text+" is not recognized as internal or exernal command.")
+        text_result.config(state='disabled')
+        
+    else:
+        text_result.insert(END,'\n'+output)
+        text_result.config(state='disabled')
 
 root=Tk()
 root.title("Simple command line interface")
@@ -29,5 +34,6 @@ btn.place(x=625,y=1,width=75,height=40)
 
 text_result=Text(root)
 text_result.place(x=1,y=150,width=800,height=400)
+text_result.insert(END,"Try running 'dir' command")
 
 root.mainloop()
