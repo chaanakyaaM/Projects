@@ -32,10 +32,10 @@ class encode_and_decode:
             output_label.pack()
 
         def decrypt():
+            output_label.state(['!readonly'])
             output_label.delete(0,END)
             output_label.pack()
             msg1=cryptocode.decrypt(message_entry.get(),key_entry.get())
-            output_label.state(['!readonly'])
             output_label.insert(0,msg1)
             output_label.state(['readonly'])
             output_label.pack()
