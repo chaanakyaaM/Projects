@@ -23,12 +23,12 @@ class encode_and_decode:
         message_entry.pack()
 
         def encrypt():
+            output_label.state(['!readonly'])
             output_label.delete(0,END)
             output_label.pack()
             msg1=cryptocode.encrypt(message_entry.get(),key_entry.get())
             output_label.insert(0,msg1)
             output_label.state(['readonly'])
-            output_label.state(['!readonly'])
             output_label.pack()
 
         def decrypt():
