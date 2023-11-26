@@ -2,7 +2,7 @@
 
 
 * It is a simple GUI application made with the help of python.
-* use "pip install tkinter" and "pip install cryptocode"
+* use "pip install tkinter".
 * After cloning the repo MAIN.py is the main file to run.
 * You can sign up and login in.
 * You can perform other basic operations like creating a file ,searching a file ,Deleting a file.
@@ -14,6 +14,10 @@
 # Log_ver_2
 
 * It is the updated version of log_ver_1.
+* use "pip install cryptocode".
+* Your usernames and passwords are encrypted.
+
+  
 * # features
 * All functional windows are resized to the same resolution(sign up and login).
 * The usernames and passwords are encryped (so that the other user can not understand).
