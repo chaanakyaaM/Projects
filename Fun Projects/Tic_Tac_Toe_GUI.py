@@ -5,7 +5,7 @@ from tkinter import ttk
 root=Tk()
 root.title("Tic-Tac-Toe")
 
-j=0;b1=0;b2=0;b3=0;b4=0;b5=0;b6=0;b7=0;b8=0;b9=0,l=0
+j=0;b1=0;b2=0;b3=0;b4=0;b5=0;b6=0;b7=0;b8=0;b9=0;l=0
 
 def click(num):
     
@@ -58,7 +58,7 @@ def click(num):
             b9=1
             j+=1
             
-        if  (b1==b2==b3==1) or b1==b4==b7==1) or (b2==b5==b8==1) or \
+        if  (b1==b2==b3==1) or (b1==b4==b7==1) or (b2==b5==b8==1) or \
             (b3==b6==b9==1) or (b4==b5==b6==1) or (b7==b8==b9==1) or \
             (b1==b5==b9==1) or (b3==b5==b7==1):
             l=ttk.Label(root,text="O won!",width=10)
@@ -113,8 +113,7 @@ def click(num):
             
         if  (b1==b2==b3==2) or (b1==b4==b7==2) or (b2==b5==b8==2) or \
             (b3==b6==b9==2) or (b4==b5==b6==2) or (b7==b8==b9==2) or \
-            (b1==b5==b9==2) or (b3==b5==b7==2):
-            (b3==b5==b7==2):
+            (b1==b5==b9==2) or (b3==b5==b7==2) or (b3==b5==b7==2):
             l=ttk.Label(root,text="O won!",width=10)
             l.grid(row=5,column=2)
                 
