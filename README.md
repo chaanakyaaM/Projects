@@ -19,7 +19,8 @@
 * It is a simple GUI application built using python.
 * What this application basically does is that, it returns the summary of the article which matches with the text field.
 * You can also get more results like: title, URL and summary in different languages using 'advanced' button.
-* Windows has fixed resolution (not responsive). 
+* Windows has fixed resolution (not responsive).
+* Run Article_searcher.py.
 
 
 
