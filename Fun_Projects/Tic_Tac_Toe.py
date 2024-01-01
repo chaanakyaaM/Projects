@@ -1,11 +1,12 @@
 def grid_reset():
-  global z,b,c,d,e,f,g,h,x
-  z='a';b='b';c='c';d='d';e='e';f='f';g='g';h='h';x='i'
+  global z,b,c,d,e,f,g,h,x,i
+  z='a';b='b';c='c';d='d';e='e';f='f';g='g';h='h';x='i';i=1
 
 def grid(op,num):
-  global z,b,c,d,e,f,g,h,x,stop_game
+  global z,b,c,d,e,f,g,h,x,stop_game,i
 
   if num==0:
+    i+=1
     if op=='a' and z!="O" and z!="X":
       z="X"
     elif op=='b' and b!="O" and b!="X":
@@ -25,6 +26,7 @@ def grid(op,num):
     elif op=='i' and x!="O" and x!="X":
       x="X"
     else:
+      i-=1
       print(f"player {num+1} sorry, thats a invalid move and you lost your move \n better dont repeat next time")
 
     print("       |       |     ")
@@ -51,6 +53,7 @@ def grid(op,num):
         stop_game=False
 
   elif num==1:
+    i+=1
     if op=='a' and z!="X" and z!="O":
       z="O"
     elif op=='b' and b!="X" and b!="O":
@@ -70,6 +73,7 @@ def grid(op,num):
     elif op=='i' and x!="X" and x!="O":
       x="O"
     else:
+      i-=1
       print(f"player {num+1} sorry, thats a invalid move and you lost your move \n better dont repeat next time")
 
     print("       |       |     ")
@@ -109,13 +113,13 @@ print("----------------------")
 print("       |       |     ")
 print(f"   {g}   |   {h}   |   {x}  ")
 print("       |       |     ")
-
+i=1
 while True:
 
   if stop_game==False:
     break
 
-  if i%9==0:
+  if i%10==0:
     print("Out of chances")
     choice=input("you wanna play again?(y/n):")
 
