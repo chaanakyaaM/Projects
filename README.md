@@ -12,6 +12,7 @@
 * The username and passwords are stored in the file named encrypted_usernames_passwords.txt .
 * You can also view your file after the completion of it (using open button).
 * You can also edit your file later.
+* This application works on hashmap concept.
 * This application has fixed resolution (not responsive).
 
 
